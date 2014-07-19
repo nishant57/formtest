@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Addnum</title>
+	</head>
+	<body>
+	<form action="/addnum/" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Submit" />
+	{% if sum %}
+		<p>Answer: {{ sum }}</p>
+<!--		<p>{{ form.num1 }}</p>-->
+	{% endif %}
+	</form>
+	</body>
+</html>
