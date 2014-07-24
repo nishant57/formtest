@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 def index(request):
 	return HttpResponse("Success!")
 
-#class UserDetail(DetailView, slug):
-#	model = User
+class UserDetail(DetailView, slug):
+	model = User

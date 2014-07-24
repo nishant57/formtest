@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from bookdb import views
-from django.views.generic import TemplateView
-# from bookdb.views import UserDetail
+from bookdb.views import UserDetail
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,8 +16,6 @@ urlpatterns = patterns('',
 
 #	url(r'^users/(?P<user>[\w]+)/$', UserDetail.as_view()),
 	url(r'^home/', views.index , name = "index"),
-	url(r'^accounts/profile/', TemplateView.as_view(template_name='bookdb/profile.html')),
-	url(r'^users/', TemplateView.as_view(template_name='bookdb/profile.html')),
 	url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^books/', include('genviewbks.urls')),
